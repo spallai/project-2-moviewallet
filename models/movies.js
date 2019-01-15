@@ -38,3 +38,5 @@ var movie = {
     }
     
 }
+
+module.exports = movie;
