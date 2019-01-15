@@ -13,7 +13,7 @@ CREATE TABLE movies (
     PRIMARY KEY (id)
 );
 
-CREATE TABLE users (
+CREATE TABLE user (
 	id INTEGER NOT NULL AUTO_INCREMENT,
     username VARCHAR(100) NOT NULL,
     password VARCHAR(100) NOT NULL,
@@ -23,6 +23,7 @@ CREATE TABLE users (
 CREATE TABLE playlists (
 	id INTEGER NOT NULL AUTO_INCREMENT,
     user_id INTEGER,
+    movies_id TEXT, --This will be an array of the movie id's--
     name VARCHAR(100) NOT NULL,
     description VARCHAR(255),
     PRIMARY KEY (id)
