@@ -5,7 +5,7 @@ CREATE TABLE movies (
 	id INTEGER NOT NULL AUTO_INCREMENT,
     title VARCHAR(200) NOT NULL,
     imdbId VARCHAR(20),
-    rating VARCHAR(5),
+    rating VARCHAR(10),
     genre VARCHAR(100),
     plot TEXT,
     actors VARCHAR(255),
