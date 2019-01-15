@@ -10,6 +10,7 @@ CREATE TABLE movies (
     plot TEXT,
     actors VARCHAR(255),
     status SMALLINT,
+    watched BOOLEAN DEFAULT false,
     PRIMARY KEY (id)
 );
 
