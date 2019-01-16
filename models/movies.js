@@ -19,6 +19,12 @@ var movie = {
         });
     },
 
+    viewYNM: function(status, userId, cb) {
+        orm.selectYNM(status, userId, function(res){
+            cb(res);
+        });
+    },
+
     create: function(title, imdbId, rating, genre, plot, actors, status, user_id, cb) {
         orm.createMovie(title, imdbId, rating, genre, plot, actors, status, user_id, function(res){
             cb(res);

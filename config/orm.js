@@ -29,6 +29,15 @@ var orm = {
         })
     },
 
+    selectYNM: function(status, userId, cb) {
+        var queryString = "SELECT * FROM movies WHERE status = ? && user_id = ?";
+
+        connection.query(queryString, [status, userId], function(err, result){
+            if (err) throw err;
+            cb(result);
+        })
+    },
+
     createMovie: function(title, imbdId, rating, genre, plot, actors, status, user_id, cb) {
         var queryString = "INSERT INTO movies SET title = ?, imdbId = ?, rating = ?, genre = ?, plot = ?, actors = ?, status = ?, user_id = ?";
 
