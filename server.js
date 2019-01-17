@@ -1,5 +1,4 @@
 var express = require("express");
-
 var PORT = process.env.PORT || 8080;
 
 var app = express();
@@ -18,9 +17,7 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
-var routes = require("./controllers/movie_controller.js");
-
-app.use(routes);
+require("./controllers/movie_controller.js");
 
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {
