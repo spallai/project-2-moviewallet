@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/spallai/project-2-moviewallet/issues"
   },
-  "homepage": "https://github.com/spallai/project-2-moviewallet#readme"
+  "homepage": "https://github.com/spallai/project-2-moviewallet#readme",
+  "dependencies": {
+    "random-words": "^1.1.0",
+    "request": "^2.88.0",
+    "youtube-search": "^1.1.4"
+  }
 }
