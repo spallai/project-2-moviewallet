@@ -1,0 +1,230 @@
+* {
+  box-sizing: border-box;
+}
+
+body{
+    background-image: url("../images/landingpage/fullmovielibrary.png");
+    background-repeat: repeat-x;
+    background-repeat: repeat-y;
+}
+
+
+button{
+    background: none;
+    border: none;
+}
+
+/* .browseplaylists{
+    position: aboslute ;
+
+} */
+
+/* .landingbackground{
+    background-image: url("../images/landingpage/fullmovielibrary.png");
+    background-repeat: repeat-x;
+    background-repeat: repeat-y;
+} */
+
+.responsive{
+    width: 95%;
+    height: auto;
+  }
+
+.logo{
+    padding-top:10px;
+    padding-bottom:10px;
+}
+.userinfo {
+    padding-top:10px;
+    padding-bottom:10px;
+    border-color: #160c55;
+    border-radius: 10px;
+    border:1px ;
+    color:#a597f5;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.login{
+    display: inline;
+    background-color: #160c55;
+    color:#f6f6f6;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    padding-left:36px;
+    padding-right:36px;
+    padding-top:10px;
+    padding-bottom:10px;
+    size: 25px;
+    margin-right: 10px;
+
+}
+
+.signup{
+    display: inline;
+    background-color: #4427ef;
+    color: #f6f6f6;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    padding-left:30px;
+    padding-right:30px;
+    padding-top:10px;
+    padding-bottom:10px;
+    size: 25px;
+    margin-left: 10px; 
+}
+
+.whitebox{
+    margin-left: auto;
+    margin-right: auto;
+    width: 42%;
+    text-align: center;
+    background-color: #f6f6f6;
+    position: relative;
+    padding-bottom: 13px;
+    border-radius: 13px;
+    position: relative;
+    top: 25%;
+    transform: perspective(1px) translateY(15%);
+}
+
+.feedbackground{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1%;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: #ffffff;
+    position: relative;
+    padding-bottom: 13px;
+    padding-top: 13px;
+    border-radius: 13px;
+    position: relative;
+}
+
+.playlistbackground{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1%;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: #ffffff;
+    position: relative;
+    padding-bottom: 13px;
+    padding-top: 13px;
+    border-radius: 13px;
+    position: relative;
+}
+
+.menu-box{
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    text-align: center;
+    background-color: #ffffff;
+    position: relative;
+    padding-bottom: 13px;
+    border-radius: 13px;
+    position: relative;
+}
+
+.trailer-box{
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+    text-align: center;
+    background-color: #ffffff;
+    border-color: #8fa9ff;
+    border-style:solid;
+    position: relative;
+    padding-bottom: 13px;
+    border-radius: 13px;
+    position: relative;
+    top: 25%;
+    transform: perspective(1px) translateY(15%);
+}
+
+
+#myInput {
+  background-image: url("../images/feedicons/searchicon.png");
+  background-position: 10px 12px;
+  border-radius: 13px;
+  background-repeat: no-repeat;
+  width: 90%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #4427ef;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+#yes{
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    font-size: 18px;
+    size: 10px;
+    float: right;
+}
+
+#no{
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-size: 18px;
+    float: left;
+}
+
+#maybe{
+  position: absolute;
+  text-align: center;
+  font-size: 18px;
+  float: top;
+}
+
+#info{
+    text-align:center;
+    padding-top: 25%;
+    float: bottom;
+}
+
+#wallet{
+    padding-left:36px;
+    padding-right:36px;
+    padding-top:10px;
+    padding-bottom:10px;
+    size: 25px;
+    margin-right: 10px;
+}
+
+#playlists{
+    padding-left:30px;
+    padding-right:30px;
+    padding-top:10px;
+    padding-bottom:10px;
+    size: 25px;
+    margin-left: 10px;
+}
