@@ -19,8 +19,8 @@ var movie = {
         });
     },
 
-    create: function(title, imdbId, rating, genre, plot, actors, status, user_id, cb) {
-        orm.createMovie(title, imdbId, rating, genre, plot, actors, status, user_id, function(res){
+    create: function(title, imdbId, rating, genre, plot, actors, poster, status, user_id, cb) {
+        orm.createMovie(title, imdbId, rating, genre, plot, actors, poster, status, user_id, function(res){
             cb(res);
         })
     },

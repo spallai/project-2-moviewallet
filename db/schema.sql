@@ -9,6 +9,7 @@ CREATE TABLE movies (
     genre VARCHAR(100),
     plot TEXT,
     actors VARCHAR(255),
+    poster VARCHAR(255),
     status SMALLINT,
     watched BOOLEAN DEFAULT false,
     user_id = INTEGER NOT NULL,
