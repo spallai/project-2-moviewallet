@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/spallai/project-2-moviewallet/issues"
   },
-  "homepage": "https://github.com/spallai/project-2-moviewallet#readme"
+  "homepage": "https://github.com/spallai/project-2-moviewallet#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "express-validator": "^5.3.1",
+    "mysql": "^2.16.0"
+  }
 }
