@@ -1,6 +1,7 @@
 var orm = require("../config/orm.js");
 
 var movie = {
+
     all: function(cb) {
         orm.selectAll("movies", function(res){
             cb(res);
@@ -15,6 +16,12 @@ var movie = {
 
     viewSome: function(column, condition, cb) {
         orm.selectSome("movies", column, condition, function(res){
+            cb(res);
+        });
+    },
+
+    viewByUserAndStatus: function(user, status, cb){
+        orm.selectByUserAndStatus(user, status, function(res){
             cb(res);
         });
     },
