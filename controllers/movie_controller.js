@@ -14,7 +14,7 @@ router.get("/api/movies/:id/:status", function(req,res){
         var hbsObject = {
             movies: results
         };
-        res.render("", hbsObject);
+        res.json(hbsObject);
     });
 });
 
