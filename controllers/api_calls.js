@@ -9,53 +9,48 @@ const opts = {
 
 var result = {};
 
-var counter = 1;
-
 function findMovie(cb){
     var movie = random();
-    var queryURL = "https://www.omdbapi.com/?s=" + movie + "&type=movie&apikey=b9ba7c90"; //change before going live
+    var queryURL = "https://www.omdbapi.com/?t=" + movie + "&type=movie&apikey=b9ba7c90"; //change before going live
 
     //console.log(movie);
     
     request(queryURL, {json: true}, function(err, res, body) {
         if (err) throw err;
-        counter++;
         // console.log(body);
 
-        if (body.Response === "False" && counter < 3){
-  //          console.log("Bad word");
-            findMovie();
-        } else if (body.Response === "True") {
+//         if (body.Response === "False" && counter < 3){
+//   //          console.log("Bad word");
+//             findMovie();
+//         } else if (body.Response === "True") {
 
 //            console.log("Good word");
 
-            queryURL = "https://www.omdbapi.com/?i=" + body.Search[0].imdbID + "&apikey=b9ba7c90"; //change before going live
+            // queryURL = "https://www.omdbapi.com/?i=" + body.Search[0].imdbID + "&apikey=b9ba7c90"; //change before going live
 
-            request(queryURL, {json: true}, function(err, res, body) {
-                if (err) throw err;
-                // console.log(body);
+            // request(queryURL, {json: true}, function(err, res, body) {
+            //     if (err) throw err;
+            //     // console.log(body);
 
                 if (body.Rated === "G" || body.Rated === "PG" || body.Rated === "PG-13" || body.Rated === "R") {
               //      console.log("Good movie");
             //        console.log(body);
-                    counter = 0;
                     result = {
                         Body: body,
                         Trailer: findTrailer(body.Title, body.Year,body, cb)
                     };
                     return(result);
                 } else {
-                    counter++;
           //          console.log("Bad movie");
-                    findMovie();
+                    findMovie(cb);
                 }
             })
         }
-        else {
-            console.log("Timed out");
-        }
-    })
-}
+        // else {
+        //     console.log("Timed out");
+        // }
+//     })
+// }
 
 function findTrailer(title, year, movieStuff, cb) {
     search(title + " trailer" + year, opts, function(err, results) {
