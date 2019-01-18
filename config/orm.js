@@ -2,6 +2,14 @@ var connection = require("../config/connection.js");
 
 var orm = {
 
+    selectByUserAndStatus: function(user,status, cb){
+        var queryString = "SELECT * FROM movies WHERE user_id = ? && status = ?";
+        connection.query(queryString, [user, status], function(err, result){
+            if(err) throw err;
+            cb(result);
+        });
+    },
+
     selectAll: function(table, cb) {
         var queryString = "SELECT * FROM ??";
 

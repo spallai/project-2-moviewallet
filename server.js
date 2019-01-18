@@ -17,7 +17,9 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
-// require("./controllers/movie_controller.js")(app);
+var routes = require("./controllers/movie_controller.js");
+app.use(routes);
+
 require("./routes/html-routes.js")(app);
 require("./routes/imdb-routes.js")(app);
 // Start our server so that it can begin listening to client requests.

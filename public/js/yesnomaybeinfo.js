@@ -23,7 +23,7 @@ $.get("/imdb/random", function (result) {
             $(".trailer-box").attr("plot", result.Body.Plot);
             $(".trailer-box").attr("genre", result.Body.Genre);
             $(".trailer-box").attr("poster", result.Body.Poster);
-            $(".trailer-box").attr("imdbId", result.Body.imdbId);
+            $(".trailer-box").attr("imdbId", result.Body.imdbID);
             $(".trailer-box").attr("actors", result.Body.Actors);
             $(".trailer-box").attr("rating", result.Body.Rated);
             var trailerSplit = result.Trailer.split("=");
