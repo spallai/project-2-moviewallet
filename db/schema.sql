@@ -1,3 +1,4 @@
+
 CREATE DATABASE moviewallet_db;
 USE moviewallet_db;
 
@@ -9,9 +10,10 @@ CREATE TABLE movies (
     genre VARCHAR(100),
     plot TEXT,
     actors VARCHAR(255),
+    poster VARCHAR(255),
     status SMALLINT,
     watched BOOLEAN DEFAULT false,
-    user_id = INTEGER NOT NULL,
+    user_id INTEGER NOT NULL,
     PRIMARY KEY (id)
 );
 
@@ -25,7 +27,7 @@ CREATE TABLE user (
 CREATE TABLE playlists (
 	id INTEGER NOT NULL AUTO_INCREMENT,
     user_id INTEGER,
-    movies_id TEXT, --This will be an array of the movie id's--
+    movies_id TEXT,
     name VARCHAR(100) NOT NULL,
     description VARCHAR(255),
     PRIMARY KEY (id)
