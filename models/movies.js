@@ -27,7 +27,9 @@ var movie = {
     },
 
     create: function(title, imdbId, rating, genre, plot, actors, poster, status, user_id, cb) {
+        console.log("model rating: " + rating);
         orm.createMovie(title, imdbId, rating, genre, plot, actors, poster, status, user_id, function(res){
+            console.log("did model");
             cb(res);
         })
     },

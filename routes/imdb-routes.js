@@ -1,5 +1,6 @@
 var path = require("path");
 var movie = require("../controllers/api_calls.js");
+var addMovie = require("../models/movies.js")
 
 
 module.exports = function(app) {
@@ -10,4 +11,15 @@ module.exports = function(app) {
             return res.json(result);
         });
     });
+
+    app.post("/api/movies", function(req, res) {
+        var newMovie = req.body;
+        console.log(newMovie);
+        addMovie.create(newMovie.Body.Title, newMovie.Body.imdbID, newMovie.Body.Rated, newMovie.Body.Genre, newMovie.Body.Plot, newMovie.Body.Actors, newMovie.Body.Poster, 1, 1, function(){
+            console.log("It worked?");
+        });
+    });
+
+    
+
 }
