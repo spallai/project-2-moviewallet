@@ -66,7 +66,10 @@ button {
     background-color: #fefefe; 
     margin: 5% auto 15% auto;  
     border: 1px solid #888; 
-    width: 80%;   
+    width: 80%;
+    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
+    animation-name: modalopen;
+    animation-duration: 1s;
 } 
   
   
@@ -92,7 +95,12 @@ button {
     display: table; 
 } 
   
-  
+@keyframes modalopen{
+    from{opacity: 0;}
+    tp{opacity: 1;}
+
+}
+
 @media screen and (max-width: 300px) { 
     .cancelbtn, .signupbtn { 
        width: 100%; 
