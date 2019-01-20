@@ -22,10 +22,12 @@ app.set("view engine", "handlebars");
 // Import routes and give the server access to them.
 
 
-var routes = require("./routes/register.js");
+var register = require("./routes/register.js");
+app.use(register);
 
 var routes = require("./controllers/movie_controller.js");
 app.use(routes);
+
 
 require("./routes/html-routes.js")(app);
 require("./routes/imdb-routes.js")(app);
