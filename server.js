@@ -2,7 +2,13 @@ var express = require("express");
 
 var expressValidator = require("express-validator");
 
+
 var PORT = process.env.PORT || 8080;
+
+var cookieParser = require("cookie-parser");
+var session = require("express-session");
+var morgan = require("morgan");
+
 
 var app = express();
 app.use(expressValidator()); 
@@ -31,6 +37,18 @@ app.use(routes);
 
 require("./routes/html-routes.js")(app);
 require("./routes/imdb-routes.js")(app);
+
+app.use(morgan("dev"));
+app.use(cookieParser(app));
+app.use(session({secret: 'anystringoftext',
+                 saveUninitialized: true,
+                 resave: true}));
+
+app.use("/", function(req, res) {
+  console.log(req.cookies);
+  console.log("----------");
+  console.log(req.session);
+})
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {
   // Log (server-side) when our server has started
