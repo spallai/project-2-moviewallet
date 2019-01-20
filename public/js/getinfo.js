@@ -5,8 +5,21 @@ $.get("/imdb/random", function(data){
         console.log(data);
         var link = data.Trailer.split("=");
         console.log(link);
-        $("#trailer").attr("src", "https://www.youtube.com/embed/" + link[1]);
+        $("#trailer").attr("src", "https://www.youtube.com/embed/" + link[1] + "?autoplay=1");
         $("#title").text(data.Body.Title);
+
+        $("#test").on("click", function(event){
+            $.post("/api/movies", data) 
+            .done(function(data){
+                console.log("Adding movie?");
+            })
+            .fail(function(){
+                console.log("fail");
+            })
+            .always(function(){
+                console.log("over");
+            })
+        });
     }else {
         console.log("bad");
     }
