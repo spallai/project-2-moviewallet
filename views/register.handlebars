@@ -8,25 +8,134 @@
     {{/each}}
 {{/if}}
 
-<form method="POST" action="/register">
-    <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" name="username" class="form-control" placeholder="Username">
-    </div>
-
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" name="email" class="form-control" placeholder="Email">
-    </div>
-
-    <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" name="password" class="form-control" placeholder="Password">
-    </div>
-
-    <div class="form-group">
-        <label for="passwordMatch">Re-Enter Password</label>
-        <input type="password" name="passwordMatch" class="form-control" placeholder="Password">
-    </div>
-    <button type="submit" class="btn btn-primary">Register</button>
-</form>
+<!--for isabel <button onclick="document.getElementById('').style.display='block'">SignUp</button>-->
+<!DOCTYPE html> 
+<html> 
+<style> 
+  
+input[type=text], input[type=password] { 
+    width: 100%; 
+    padding: 12px 20px; 
+    margin: 8px 0; 
+    display: inline-block; 
+    border: 1px solid #ccc; 
+    box-sizing: border-box; 
+} 
+  
+  
+button { 
+    background-color: #4CAF50; 
+    color: white; 
+    padding: 14px 20px; 
+    margin: 8px 0; 
+    border: none; 
+    cursor: pointer; 
+    width: 100%; 
+} 
+  
+  
+.cancelbtn { 
+    padding: 14px 20px; 
+    background-color: #f44336; 
+} 
+  
+  
+.cancelbtn,.signupbtn {float:left;width:50%} 
+  
+  
+.container { 
+    padding: 16px; 
+} 
+  
+  
+.modal { 
+    display: none;  
+    position: fixed;  
+    z-index: 1; left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%;  
+    overflow: auto;  
+    background-color: rgb(0,0,0);  
+    background-color: rgba(0,0,0,0.4);  
+    padding-top: 60px; 
+} 
+  
+  
+.modal-content { 
+    background-color: #fefefe; 
+    margin: 5% auto 15% auto;  
+    border: 1px solid #888; 
+    width: 80%;   
+} 
+  
+  
+.close { 
+    position: absolute; 
+    right: 35px; 
+    top: 15px; 
+    color: #000; 
+    font-size: 40px; 
+    font-weight: bold; 
+} 
+  
+.close:hover, 
+.close:focus { 
+    color: red; 
+    cursor: pointer; 
+} 
+  
+  
+.clearfix::after { 
+    content: ""; 
+    clear: both; 
+    display: table; 
+} 
+  
+  
+@media screen and (max-width: 300px) { 
+    .cancelbtn, .signupbtn { 
+       width: 100%; 
+    } 
+} 
+</style> 
+<body> 
+    
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button> 
+  
+<div id="id01" class="modal"> 
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span> 
+  <form class="modal-content animate" action="/action_page.php"> 
+    <div class="container"> 
+      <label><b>Username</b></label> 
+      <input type="text" placeholder="Enter Username" name="username" required> 
+  
+      <label><b>Email</b></label> 
+      <input type="text" placeholder="Enter Email" name="email" required> 
+  
+      <label><b>Password</b></label> 
+      <input type="password" placeholder="Password" name="password" required> 
+      <input type="checkbox" checked="checked"> Remember me 
+  
+      <div class="clearfix"> 
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button> 
+        <button type="submit" class="signupbtn">Sign Up</button> 
+      </div> 
+    </div> 
+  </form> 
+</div> 
+  
+<script> 
+  
+var modal = document.getElementById('id01'); 
+  
+  
+window.onclick = function(event) { 
+    if (event.target == modal) { 
+        modal.style.display = "none"; 
+    } 
+} 
+</script> 
+  
+</body> 
+</html> 
