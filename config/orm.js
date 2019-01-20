@@ -39,9 +39,11 @@ var orm = {
 
     createMovie: function(title, imbdId, rating, genre, plot, actors, poster, status, user_id, cb) {
         var queryString = "INSERT INTO movies SET title = ?, imdbId = ?, rating = ?, genre = ?, plot = ?, actors = ?, poster = ?, status = ?, user_id = ?";
-
-        connection.query(queryString, [title, imbdId, rating, genre, plot, actors, poster, status, user_id], function(err, result) {
+        console.log("INSERT INTO movies SET title = " + title + " , imdbId = "+ imbdId+ ", rating = "+rating+", genre = "+ genre +", plot = "+plot+", actors = "+actors+", status = "+status+", user_id = "+user_id);
+        connection.query(queryString, [title, imbdId, rating, genre, plot, actors, poster, 1, 1], function(err, result) {
             if (err) throw err;
+            console.log("did orm");
+            console.log(result);
             cb(result);
         });
     }, 
