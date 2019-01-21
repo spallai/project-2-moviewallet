@@ -5,11 +5,11 @@ var app = express.Router();
 var expressValidator = require("express-validator");
 
 
-app.get("/register", function(req, res, next){
+app.get("/home", function(req, res, next){
     res.render('register', {title: "Registration"});
 });
 
-app.post("/register", function(req, res, next){
+app.post("/home", function(req, res, next){
    
     // req.checkBody("username", "Username field cannot be empty.").notEmpty();
     // req.checkBody("username", "Username must be between 4-15 characters long.").len(4,15);
@@ -38,7 +38,7 @@ app.post("/register", function(req, res, next){
             if (err) throw err;
         });
         
-        res.redirect("/");
+        res.redirect("/home.html");
     // }
     });
 

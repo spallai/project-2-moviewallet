@@ -111,7 +111,7 @@ button {
 
 <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button> 
   
-<div id="id01" class="modal"> 
+<div id="signup" class="modal"> 
   <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span> 
   
   <form method="POST" class="modal-content animate" action="/register"> 
@@ -135,10 +135,10 @@ button {
   </form>     
 </div> 
 
-<button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Login</button> 
+<button onclick=>Login</button> 
   
-<div id="id02" class="modal"> 
-  <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span> 
+<div id="login" class="modal"> 
+  <span onclick="document.getElementById('login').style.display='none'" class="close" title="Close Modal">×</span> 
   
   <form method="POST" class="modal-content animate" action="/login"> 
     <div class="container"> 
@@ -158,8 +158,7 @@ button {
   </form>     
 </div> 
 
-<script src="/routes/register.js" type="text/javascript" charset="utf-8"></script>
-<script> 
+
   
 var modal = document.getElementById('id01'); 
 var modal = document.getElementById('id02'); 
