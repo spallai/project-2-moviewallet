@@ -1,14 +1,14 @@
 var connection = require("../config/connection.js");
 
 var express = require("express");
-var router = express.Router();
+var app = express.Router();
 var expressValidator = require("express-validator");
 
-router.get("/register", function(req, res, next){
+app.get("/register", function(req, res, next){
     res.render('register', {title: "Registration"});
 });
 
-router.post("/register", function(req, res, next){
+app.post("/register", function(req, res, next){
    
     // req.checkBody("username", "Username field cannot be empty.").notEmpty();
     // req.checkBody("username", "Username must be between 4-15 characters long.").len(4,15);
@@ -32,15 +32,13 @@ router.post("/register", function(req, res, next){
         const email = req.body.email;
         const password = req.body.password;
 
-        connection.query("INSERT INTO users (username, email, password) VALUES (?, ?, ?)", 
+        connection.query("INSERT INTO user (username, email, password) VALUES (?, ?, ?)", 
         [username, email, password], function(err, res, fields){
             if (err) throw err;
-
-            res.render('register', {title: "Registration Complete"});
         });
-    // }
-
+    
+        res.redirect("/");
     
 });
 
-module.exports = router;
+module.exports = app;

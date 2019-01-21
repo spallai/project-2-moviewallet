@@ -108,12 +108,13 @@ button {
 } 
 </style> 
 <body> 
-    
+
 <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button> 
   
 <div id="id01" class="modal"> 
   <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span> 
-  <form method="POST" class="modal-content animate" action="/action_page.php"> <!--redirect here-->
+  
+  <form method="POST" class="modal-content animate" action="/register"> 
     <div class="container"> 
       <label><b>Username</b></label> 
       <input type="text" placeholder="Enter Username" name="username" required> 
@@ -130,9 +131,11 @@ button {
         <button type="submit" class="signupbtn">Sign Up</button> 
       </div> 
     </div> 
-  </form> 
+    
+  </form>     
 </div> 
-  
+
+<script src="/routes/register.js" type="text/javascript" charset="utf-8"></script>
 <script> 
   
 var modal = document.getElementById('id01'); 

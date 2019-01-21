@@ -31,6 +31,9 @@ app.set("view engine", "handlebars");
 var register = require("./routes/register.js");
 app.use(register);
 
+// var login = require("./routes/user.js");
+// app.use(login);
+
 var routes = require("./controllers/movie_controller.js");
 app.use(routes);
 
@@ -42,12 +45,12 @@ app.use(morgan("dev"));
 app.use(cookieParser(app));
 app.use(session({secret: 'anystringoftext',
                  saveUninitialized: true,
-                 resave: true}));
+                 resave: false,
+                 cookie: {secure: "auto"}
+                }));
 
 app.use("/", function(req, res) {
-  console.log(req.cookies);
-  console.log("----------");
-  console.log(req.session);
+
 })
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {
