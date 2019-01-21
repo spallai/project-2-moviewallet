@@ -8,6 +8,23 @@ body{
     background-repeat: repeat-y;
 }
 
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #160c55;
+    font-size: 52px;
+    left: 30;
+}
+
+h2{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #160c55;
+}
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #160c55;
+}
+
 
 button{
     background: none;
@@ -57,7 +74,6 @@ button{
     padding-bottom:10px;
     size: 25px;
     margin-right: 10px;
-
 }
 
 .signup{
@@ -92,11 +108,10 @@ button{
 .feedbackground{
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 1%;
     width: 100%;
     height: 100%;
     text-align: center;
-    background-color: #ffffff;
+    background-color: #03010c;
     position: relative;
     padding-bottom: 13px;
     padding-top: 13px;
@@ -122,16 +137,110 @@ button{
 .menu-box{
     margin-left: auto;
     margin-right: auto;
-    width: 90%;
+    width: 10%;
+    text-align: center;
+    position: relative;
+    padding-bottom: 5px;
+    border-radius: 8px;
+    position: fixed;
+    float: left;
+    left: 90%;
+    bottom:15%
+}
+
+/* .trailer-box{
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
     text-align: center;
     background-color: #ffffff;
+    border-color: #8fa9ff;
+    border-style:solid;
     position: relative;
     padding-bottom: 13px;
     border-radius: 13px;
     position: relative;
+    top: 25%;
+    transform: perspective(1px) translateY(15%);
+} */
+
+.walletsbackground{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1%;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: #ffffff;
+    position: relative;
+    padding-bottom: 13px;
+    padding-top: 13px;
+    border-radius: 13px;
+    position: relative;
 }
 
-.trailer-box{
+.yes{
+    display: inline;
+    background-color: #39b543;
+    color: #f6f6f6;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    padding-left:30px;
+    padding-right:30px;
+    padding-top:10px;
+    padding-bottom:10px;
+    size: 25px;
+    margin-left: 10px;
+}
+
+.no{
+    display: inline;
+    background-color:#ff4851;
+    color: #f6f6f6;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    padding-left:30px;
+    padding-right:30px;
+    padding-top:10px;
+    padding-bottom:10px;
+    size: 25px;
+    margin-left: 10px;
+    opacity: 5;
+}
+
+.maybe{
+    display: inline;
+    background-color: #ffbc48;
+    color: #f6f6f6;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    padding-left:30px;
+    padding-right:30px;
+    padding-top:10px;
+    padding-bottom:10px;
+    size: 25px;
+    margin-left: 10px;
+}
+
+.playlists{
+    display: inline;
+    background-color: #4427ef;
+    color: #f6f6f6;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    padding-left:30px;
+    padding-right:30px;
+    padding-top:10px;
+    padding-bottom:10px;
+    size: 25px;
+    margin-left: 10px;
+}
+
+.wallets-box{
     margin-left: auto;
     margin-right: auto;
     width: 85%;
@@ -147,13 +256,26 @@ button{
     transform: perspective(1px) translateY(15%);
 }
 
+.feed-sorters{
+    display: inline;
+    color:#f6f6f6;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    padding-left:36px;
+    padding-right:36px;
+    padding-top:10px;
+    padding-bottom:10px;
+    size: 25px;
+    margin-right: 10px;
+}
 
-#myInput {
+#search {
   background-image: url("../images/feedicons/searchicon.png");
   background-position: 10px 12px;
   border-radius: 13px;
   background-repeat: no-repeat;
-  width: 90%;
+  width: 30%;
   font-size: 16px;
   padding: 12px 20px 12px 40px;
   border: 1px solid #4427ef;
@@ -183,33 +305,76 @@ button{
 
 #yes{
     position: absolute;
-    top: 8px;
-    left: 16px;
+    top: -175px;
+    right: 10%;
+    width:100px;
+    height: 100px;
     font-size: 18px;
-    size: 10px;
     float: right;
+    opacity: 1;
 }
+
+/* #yes:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=50); 
+  } */
 
 #no{
     position: absolute;
-    top: 8px;
-    right: 16px;
+    left: -35%;
+    top: -175px;
     font-size: 18px;
     float: left;
+    opacity: 1;
+    width:100px;
+    height: 100px;
 }
+
+
+/* #no:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=50); 
+  } */
 
 #maybe{
   position: absolute;
   text-align: center;
+  top:-240px;
+  bottom: -100px;
+  left: -6%;
   font-size: 18px;
   float: top;
+  width:107px;
+  height: 100px;
+  filter: alpha(opacity=50);
 }
+/*  top: -150;
+  opacity: 1; */
+/* 
+#maybe:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=50); 
+  } */
+  
 
 #info{
+    position: absolute;
     text-align:center;
-    padding-top: 25%;
     float: bottom;
+    left: -6%;
+    bottom: 5%;
+    width: 200px;
+    height: 200px;
+    opacity: 1;
+    filter: alpha(opacity=50);
+    padding-top: 65px;
+    padding-right: 100px;
+    margin-right: 100px;
 }
+/* #info:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=50); 
+  } */
 
 #wallet{
     padding-left:36px;
@@ -228,3 +393,34 @@ button{
     size: 25px;
     margin-left: 10px;
 }
+
+#trailer-box{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -35px;
+    width: 80%;
+    height: -95%;
+    text-align: center;
+    border-color: #8fa9ff;
+    border-style:solid;
+    padding-bottom: .5px;
+    position: relative;
+    top: 45%;
+    transform: perspective(1px) translateY(15%);
+}
+
+#weightedRandom{
+    background-color: #160c55;
+    color:#f6f6f6;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    padding-left:3px;
+    padding-right:3px;
+    padding-top:10px;
+    padding-bottom:10px;
+    margin-right: 10px;
+}
+
+/* display: inline;
+column-rule-width: 30%; */

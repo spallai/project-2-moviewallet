@@ -1,0 +1,16 @@
+<ul class="yes-movies">
+     {{#if yes}}
+	{{#each movies.1}}
+		<li class="list-movie-item">
+      {{#if title}}
+        title: <strong>{{title}}</strong>
+      {{/if}}
+        genre:{{genre}}
+        plot: {{plot}}
+        actors:{{actors}}
+    {{#if watched true}}
+        <p>watched</p>
+      <hr>
+		</li>
+	{{/each}}
+</ul>

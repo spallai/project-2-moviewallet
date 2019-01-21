@@ -9,53 +9,29 @@
 </head>
 <body>
         <div class="feedbackground">
+                <br>
             <div class="logo">
-                <img src="assets/images/mw-logo.png" />
+                <a href="feed.html"><img src="assets/images/mw-logo-w.png" /></a>
             </div>
-            <br><br>
+            <br>
             <div class="menu">
-            <button id="wallet" onclick="myFunction()"><img src="./assets/images/feedicons/mywallet.png" class="responsive"></button>
-            <button id="playlists" onclick="myFunction()"><img src="./assets/images/feedicons/playlists.png" class="responsive"></button>
-        </div>
-            <br><br>
-
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for movie names.." title="Type in a name">
-        
-        <ul id="myUL">
-        <!-- <li><a href="#">The Thing</a></li>
-          <li><a href="#">The Sound of Music</a></li>
-          <li><a href="#">Aquaman</a></li>
-          <li><a href="#">Lord Of The Rings: Two Towers</a></li> -->
-        </ul>
+            <button id="wallet"><a href="wallets.html"><img src="./assets/images/feedicons/mywallet.png" class="responsive" /></a></button>
+            <button id="playlists"><a href="playlists.html"><img src="./assets/images/feedicons/playlists.png" class="responsive" /> </a></button>
+            <!-- to be continued later, here is where the filters for popular only and  -->
+            <!-- <div class="feed-sorters">
+            <button id ="weightedRandom" data-weighted = "[boolean value]" onclick="myFunction()" class="responsive">Popular Only</button>
+        <input type="text" id="search" onkeyup="myFunction()" placeholder="Search for movie names.." title="Type in a name">
+    </div> -->
+</div>
         <div class="trailer-box">
-                <br><br> <br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br>
+                <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1" id="trailer-box" width="420" height="600"></iframe>
+                <br><br> <br><br><br><br> <br> <br> 
         </div>
         <div class="menu-box">
                 <button id="yes" onclick="myFunction()"><img src="./assets/images/feedicons/yes.png" class="responsive"></button>
                 <button id="no" onclick="myFunction()"><img src="./assets/images/feedicons/no.png" class="responsive"></button>
                 <button id="maybe" onclick="myFunction()"><img src="./assets/images/feedicons/maybe.png" class="responsive"></button>
                 <button id="info" onclick="myFunction()"><img src="./assets/images/feedicons/info.png" class="responsive"></button>
-        </div>
-        </div>
-
-        <!-- <script> **WORKING ON THIS***
-                function myFunction() {
-                    var input, filter, ul, li, a, i, txtValue;
-                    input = document.getElementById("myInput");
-                    filter = input.value.toUpperCase();
-                    ul = document.getElementById("myUL");
-                    li = ul.getElementsByTagName("li");
-                    for (i = 0; i < li.length; i++) {
-                        a = li[i].getElementsByTagName("a")[0];
-                        txtValue = a.textContent || a.innerText;
-                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                            li[i].style.display = "";
-                        } else {
-                            li[i].style.display = "none";
-                        }
-                    }
-                }
-                </script> -->
-    
+        </div>    
 </body>
 </html>

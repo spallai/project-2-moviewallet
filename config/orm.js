@@ -29,6 +29,8 @@ var orm = {
         })
     },
 
+    // add % %around title to make sure that any word with that part of letter or word is included in the search
+
     createMovie: function(title, imbdId, rating, genre, plot, actors, status, user_id, cb) {
         var queryString = "INSERT INTO movies SET title = ?, imdbId = ?, rating = ?, genre = ?, plot = ?, actors = ?, status = ?, user_id = ?";
 
