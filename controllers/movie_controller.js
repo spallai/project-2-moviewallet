@@ -26,3 +26,31 @@ router.get("/api/movies/:id/:status", function(req,res){
 });
 
 module.exports = router;
+
+// api routes:
+// /wallet/maybe 
+// // res.render("wallet", {
+//     movies: [],
+//     maybe:true
+// // })
+
+// /wallet/no 
+// // res.render("wallet", {
+//     movies: [],
+//     no:true
+// // })
+
+
+// /wallet/yes
+// // res.render("wallet", {
+//     movies: [],
+//     yes:true
+// different things yes needs to have
+// // })
+
+// /wallet/playlists
+// // res.render("wallet", {
+//     movies: [],
+//     playlists:true
+// different things playlists needs to have
+// // })

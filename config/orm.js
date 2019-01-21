@@ -47,13 +47,14 @@ var orm = {
             cb(result);
         });
     }, 
+    // add % %around title to make sure thatany word with that part of letter or word is included in the search//
 
-    createUser: function(username, password, cb) {
+    createUser: function(username, pw, callback) {
         var queryString = "INSERT INTO user SET username = ?, password = ?";
 
-        connection.query(queryString, [username, password], function(err, result) {
+        connection.query(queryString, [username, pw], function(err, result) {
             if (err) throw err;
-            cb(result);
+            callback(result);
         });
     },
 

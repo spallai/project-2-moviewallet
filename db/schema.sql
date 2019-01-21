@@ -1,4 +1,4 @@
-
+DROP DATABASE IF EXISTS moviewallet_db;
 CREATE DATABASE moviewallet_db;
 USE moviewallet_db;
 
@@ -20,7 +20,7 @@ CREATE TABLE movies (
 CREATE TABLE user (
 	id INTEGER NOT NULL AUTO_INCREMENT,
     username VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL, 
     password VARCHAR(100) NOT NULL,
     PRIMARY KEY (id)
 );
