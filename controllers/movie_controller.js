@@ -22,7 +22,6 @@ router.get("/api/movies/:id/:status", function(req,res){
         var hbsObject = {
             movies: results
         };
-        res.json(hbsObject);
         res.render("wallets", hbsObject)
     });
 });
