@@ -34,11 +34,22 @@ app.post("/home", function(req, res, next){
         const password = req.body.password;
 
         connection.query("INSERT INTO user (username, email, password) VALUES (?, ?, ?)", 
-        [username, email, password], function(err, res, fields){
+        [username, email, password], function(err, result, fields){
+
             if (err) throw err;
+
+            var newUser = {
+                username: req.body.username,
+                email: req.body.email,
+                password: req.body.password,
+                id: result.insertId
+            }
+            req.session.user = newUser;
+            console.log(newUser);        
+            res.redirect("/feed.html");
         });
         
-        res.redirect("/home.html");
+
     // }
     });
 
