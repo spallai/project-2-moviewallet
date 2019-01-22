@@ -1,13 +1,14 @@
-var express = require("express");0
+var express = require("express");
 var router = express.Router();
 var movie = require("../models/movies.js");
 
 router.post("/api/movies", function(req, res){
     let sH = req.body.Body; //sh = short hand
-    console.log("controller " + sH.Rated);
+    // console.log("controller " + sH.Rated);
     movie.create(sH.Title, sH.imdbID, sH.Rated, sH.Genre, sH.Plot, sH.Actors, sH.Poster, req.body.Status, req.body.user_id, function(results){
         console.log("ok, we're not idiots!");
     });
+    res.end();
 });
 
 router.get("/api/movies", function(req, res){
