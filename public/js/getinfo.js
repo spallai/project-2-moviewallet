@@ -1,11 +1,9 @@
-
 $.get("/imdb/random", function (data) {
 
     if (data) {
         // console.log(data);
-        var link = data.Trailer.split("=");
-        // console.log(link);
-        $("#trailer-box").attr("src", "https://www.youtube.com/embed/" + link[1] + "?autoplay=1");
+        var link = data.Trailer;
+        $("#trailer-box").attr("src", "https://www.youtube.com/embed/" + link + "?autoplay=1");
         $("#title").text(data.Body.Title);
 
         $("#no-i").on("click", function (event) {
