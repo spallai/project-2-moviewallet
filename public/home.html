@@ -1,5 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+
+    input[type=text], input[type=password] { 
+            width: 100%; 
+            padding: 12px 20px; 
+            margin: 8px 0; 
+            display: inline-block; 
+            border: 1px solid #ccc; 
+            box-sizing: border-box; 
+        } 
+          
+          
+        .signupbtn { 
+            background-color: #4CAF50; 
+            color: white; 
+            padding: 16px 20px; 
+            margin: 4px 0; 
+            border: none; 
+            cursor: pointer; 
+            width: 100%; 
+            float: left;
+        } 
+          
+          
+        .cancelbtn { 
+            padding: 16px 20px; 
+            background-color: #f44336; 
+            float: left;
+            width: 100%; 
+        } 
+          
+          
+        .cancelbtn,.signupbtn {float:left;width:100%} 
+          
+          
+        .container { 
+            padding: 16px; 
+        } 
+          
+          
+        .modal { 
+            display: none;  
+            position: fixed;  
+            z-index: 1; left: 0; 
+            top: 0; 
+            width: 100%; 
+            height: 100%;  
+            overflow: auto;  
+            background-color: rgb(0,0,0);  
+            background-color: rgba(0,0,0,0.4);  
+            padding-top: 60px; 
+        } 
+          
+          
+        .modal-content { 
+            background-color: #fefefe; 
+            margin: 5% auto 15% auto;  
+            border: 1px solid #888; 
+            width: 80%;
+            box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
+            animation-name: modalopen;
+            animation-duration: 1s;
+        } 
+          
+          
+        .close { 
+            position: absolute; 
+            right: 35px; 
+            top: 15px; 
+            color: #000; 
+            font-size: 40px; 
+            font-weight: bold; 
+        } 
+          
+        .close:hover, 
+        .close:focus { 
+            color: red; 
+            cursor: pointer; 
+        } 
+          
+          
+        .clearfix::after { 
+            content: ""; 
+            clear: both; 
+            display: table; 
+        } 
+          
+        @keyframes modalopen{
+            from{opacity: 0;}
+            tp{opacity: 1;}
+        
+        }
+        
+        @media screen and (max-width: 300px) { 
+            .cancelbtn, .signupbtn { 
+               width: 100%; 
+            } 
+        } 
+        </style>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,26 +107,94 @@
     <title>Movie Wallet</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
     <div class="landingbackground">
         <div class="whitebox">
-        <div class="logo">
-            <a href="home.html"><img src="assets/images/mw-logo.png" /></a>
-        </div>
-        <br><br> <br><br>
-        <div class="userinfo">
-        <!-- add the form for signing in here -->
-        <h1>hello, I'm a placeholder</h1>
-        </div>
-                <br><br> <br><br> <br><br> <br><br> 
-                <div class="logins"> 
-                <button class="login" onclick="myFunction()">log in</button>
-                <button class="signup" onclick="myFunction()">sign up</button>
+            <div class="logo">
+                <a href="home.html"><img src="assets/images/mw-logo.png" /></a>
+            </div>
+            <br><br> <br><br>
+            <div class="userinfo">
+                <!-- add the form for signing in here -->
+                <div class="logins">
+                    <div id="login" class="form">
+                        <form method="POST" class="login-form" action="/login">
+                            <div class="container">
+                                <label><b>Username</b></label>
+                                <input type="text" placeholder="Enter Username" name="username" required>
+
+                                <label><b>Password</b></label>
+                                <input type="password" placeholder="Password" name="password" required>
+                                <input type="checkbox" checked="checked"> Remember me
+
+                                <!-- <div class="clearfix"> 
+                          <button type="button" onclick="document.getElementById('login').style.display='none'" class="cancelbtn">Cancel</button> 
+                          <button type="submit" class="loginbtn">Log In</button> 
+                        </div>  --><br><br>
+                                <button class="login" onclick="document.getElementById('login').style.display='block'"
+                                    style="width:auto;">log in</button>
+
+                            </div>
+
+                        </form>
+                    </div>
                 </div>
+
+                <button class="signup" onclick="document.getElementById('signup').style.display='block'" style="width:auto;">Sign up</button>
+                <div id="signup" class="modal">
+                    <span onclick="document.getElementById('signup').style.display='none'" class="close" title="Close Modal" class="close" title="Close Modal">×</span>
+
+                    <form method="POST" class="modal-content animate" action="/login">
+                        <div class="container">
+                            <label><b>Username</b></label>
+                            <input type="text" placeholder="Enter Username" name="username" required>
+
+                            <label><b>Email</b></label>
+                            <input type="text" placeholder="Enter Email" name="email" required>
+
+                            <label><b>Password</b></label>
+                            <input type="password" placeholder="Password" name="password" required>
+                            <input type="checkbox" checked="checked"> Remember me
+
+                            <div class="clearfix"> 
+                                <button type="submit" class="signupbtn">Sign Up</button> 
+                                <button type="button" onclick="document.getElementById('signup').style.display='none'" class="cancelbtn">Cancel</button> 
+                                
+                              </div> 
+                        </div>
+
+                    </form>
+
+                </div>
+
+
                 <br>
-                <button class="browseplaylists" onclick="myFunction()"><img src="./assets/images/landingpage/browseplaylists.png" class="responsive"></button>
+                <button class="browseplaylists" onclick="myFunction()"><img src="./assets/images/landingpage/browseplaylists.png"
+                        class="responsive"></button>
+            </div>
         </div>
+        <br><br> <br><br> <br><br> <br><br>
+
 
     </div>
+
+
+    <!--<script src="/routes/register.js" type="text/javascript" charset="utf-8"></script>-->
+    <script>
+
+        var modal = document.getElementById('signup');
+        var modal = document.getElementById('id02');
+
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+    </script>
+
 </body>
+
 </html>
