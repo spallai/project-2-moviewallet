@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Movie Feed</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src = "js/getinfo.js"></script>
 </head>
@@ -13,27 +14,29 @@
         <div class="feedbackground">
                 <br>
             <div class="logo">
-                <a href="feed.html"><img src="assets/images/mw-logo-w.png" /></a>
+                <a href="feed.html"><img src="assets/images/mw-logo-w.png"/></a>
             </div>
             <br>
             <div class="menu">
             <button id="wallet"><a href="wallets.html"><img src="./assets/images/feedicons/mywallet.png" class="responsive" /></a></button>
             <button id="playlists"><a href="playlists.html"><img src="./assets/images/feedicons/playlists.png" class="responsive" /> </a></button>
-            <!-- to be continued later, here is where the filters for popular only and  -->
-            <!-- <div class="feed-sorters">
-            <button id ="weightedRandom" data-weighted = "[boolean value]" onclick="myFunction()" class="responsive">Popular Only</button>
-        <input type="text" id="search" onkeyup="myFunction()" placeholder="Search for movie names.." title="Type in a name">
-    </div> -->
 </div>
         <div class="trailer-box">
                 <iframe id="trailer-box" width="420" height="600"></iframe>
-                <br><br> <br><br><br><br> <br> <br> 
+                <br><br> <br><br><br><br> <br> <br> <br> <br> <br> <br> 
         </div>
         <div class="menu-box">
-                <button id="yes" onclick="myFunction()"><img src="./assets/images/feedicons/yes.png" class="responsive"></button>
-                <button id="no" onclick="myFunction()"><img src="./assets/images/feedicons/no.png" class="responsive"></button>
-                <button id="maybe" onclick="myFunction()"><img src="./assets/images/feedicons/maybe.png" class="responsive"></button>
-                <button id="info" onclick="myFunction()"><img src="./assets/images/feedicons/info.png" class="responsive"></button>
-        </div>    
+                <button id="yes-i" class="responsive"><i class="fas fa-check"></i></button>
+                <button id="no-i" class="responsive"><i class="fas fa-times"></i></button>
+                <button id="maybe-i" class="responsive"><i class="fas fa-ellipsis-h"></i></button>
+                <button id="info-i" class="responsive"><i class="fas fa-info"></i></button>
+        </div>  
+        
+        <!-- <div class="menu-box">
+                        <button id="yes" class="responsive"><img src="./assets/images/feedicons/yes.png" class="responsive"></button>
+                        <button id="no"><img src="./assets/images/feedicons/no.png" class="responsive"></button>
+                        <button id="maybe"><img src="./assets/images/feedicons/maybe.png" class="responsive"></button>
+                        <button id="info"><img src="./assets/images/feedicons/info.png" class="responsive"></button>
+                </div>  -->
 </body>
 </html>
