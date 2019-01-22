@@ -24,17 +24,6 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-// Import routes and give the server access to them.
-
-var login = require("./routes/user");
-app.use(login);
-
-var register = require("./routes/register");
-app.use(register);
-
-var routes = require("./controllers/movie_controller.js");
-app.use(routes);
-
 require("./routes/html-routes.js")(app);
 require("./routes/imdb-routes.js")(app);
 
@@ -46,11 +35,19 @@ app.use(session({secret: 'anystringoftext',
                  cookie: {secure: "auto"}
                 }));
 
+// Import routes and give the server access to them.
+var register = require("./routes/register");
+app.use(register);
+
+var login = require("./routes/login");
+app.use(login);
+
+var movies = require("./controllers/movie_controller.js");
+app.use(movies);
 
 app.use("/", function(req, res) {
   console.log(req.session);
 })
-
 
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {
