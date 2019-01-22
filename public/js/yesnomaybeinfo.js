@@ -18,7 +18,6 @@ $.get("/imdb/random", function (result) {
         }
 
         const genMovie = () => {
-            console.log("We be generatin'!")
             $(".trailer-box").attr("title", result.Body.Title);
             $(".trailer-box").attr("plot", result.Body.Plot);
             $(".trailer-box").attr("genre", result.Body.Genre);
@@ -30,7 +29,7 @@ $.get("/imdb/random", function (result) {
             $(".trailer-box").attr("src", "https://www.youtube.com/embed/" + trailerSplit[1] + "?autoplay=1");
         }
 
-        genMovie();
+        // genMovie();
 
         //STATUS BREAKDOWN: 1 = YES, 2 = NO, 3 = MAYBE
         $("#yes").on("click", function () {
@@ -81,16 +80,15 @@ $.get("/imdb/random", function (result) {
             $("#genre-text").text("Genre: " + $(".trailer-box").attr("genre"));
             $("#actors-text").text("Actors: " + $(".trailer-box").attr("actors"));
             $("#year-text").text("Release Year: " + $(".trailer-box").attr("year"));
-            $("#imdb-link").attr("href", "" + + "/");
             $("#imdb-link").html("<p>Imdb Link: <a href='https://www.imdb.com/title/'" + $(".trailer-box").attr("imdbId") + "'/'>https://www.imdb.com/title/" + $(".trailer-box").attr("imdbId") + "/</a></p>");
-            modal.style.display = "block";
+            // modal.style.display = "block";
         });
 
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
+        // window.onclick = function (event) {
+        //     if (event.target == modal) {
+        //         modal.style.display = "none";
+        //     }
+        // }
     } else {
         console.log("bad");
     }
