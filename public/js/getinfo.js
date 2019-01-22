@@ -33,7 +33,7 @@ $.get("/imdb/random", function (data) {
                 });
         });
         $("#info-i").on("click", function (event) {
-            $("#poster").attr("src", data.Body.Poster);
+            $("#poster").html("<img src = '" + data.Body.Poster + "'>");
             $("#title").text("Title: " + data.Body.Title);
             $("#genre").text("Genre: " + data.Body.Genre);
             $("#actors").text("Actors: " + data.Body.Actors);
