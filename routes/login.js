@@ -10,7 +10,7 @@ app.post("/login", function (req, res) {
   
     console.log(username, password);
   
-    connection.query('SELECT id AND email AND username FROM user WHERE username = ? AND password = ?', [username, password], function (error, results) {
+    connection.query('SELECT id, email, username FROM user WHERE username = ? AND password = ?', [username, password], function (error, results) {
         if (error) {
             console.log(error);
             res.send({
@@ -19,6 +19,7 @@ app.post("/login", function (req, res) {
             })
         }
         else {
+            console.log(results);
             if (results.length > 0) {
                 var user =
                 {
@@ -28,7 +29,7 @@ app.post("/login", function (req, res) {
                 };
 
                 req.session.user = user;
-                console.log("session user = " + req.session.user);
+                console.log("session user = ", req.session.user);
                 console.log("password correct");
                 
                 res.redirect('/feed.html');

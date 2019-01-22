@@ -4,7 +4,6 @@ var expressValidator = require("express-validator");
 
 var PORT = process.env.PORT || 8080;
 
-var cookieParser = require("cookie-parser");
 var session = require("express-session");
 // var session = require("cookie-session");
 var morgan = require("morgan");
@@ -13,6 +12,11 @@ var app = express();
 app.use(expressValidator()); 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
+app.use(session({secret: 'anystringoftext',
+                 saveUninitialized: true,
+                 resave: false,
+                 cookie: {secure: "auto"}
+                }));
 
 // Parse application body as JSON
 app.use(express.urlencoded({ extended: true }));
@@ -28,12 +32,6 @@ require("./routes/html-routes.js")(app);
 require("./routes/imdb-routes.js")(app);
 
 app.use(morgan("dev"));
-app.use(cookieParser(app));
-app.use(session({secret: 'anystringoftext',
-                 saveUninitialized: true,
-                 resave: false,
-                 cookie: {secure: "auto"}
-                }));
 
 // Import routes and give the server access to them.
 var register = require("./routes/register");
