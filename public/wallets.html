@@ -72,6 +72,7 @@
 
         function loopOver(status, data) {
             var moviesDiv = $("<div>");
+
             for (let i = 0; i < data.movies.length; i++) {
                 var newDiv = $("<div>");
 
@@ -83,7 +84,7 @@
                 var title = $("<div>");
                 var imdbLink = $("<div>");
 
-                poster.attr("src", data.movies[i].poster);
+                poster.html("<img src =" + data.movies[i].poster + ">");
                 title.text("Title: " + data.movies[i].title);
                 genre.text("Genre: " + data.movies[i].genre);
                 actors.text("Actors: " + data.movies[i].actors);
