@@ -511,5 +511,10 @@ button{
     margin-right: 10px;
 }
 
+#infoSpan{
+    color:#f6f6f6;
+    font-size: 30px;
+}
+
 /* display: inline;
 column-rule-width: 30%; */

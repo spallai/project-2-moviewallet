@@ -1,3 +1,25 @@
+<script>
+    var walletMovies;
+    $(".yes").on("click", function(){
+        var status =1;
+        $.get("/api/movies/"+status+"/1", function(data){
+            walletMovies = data;
+            console.log(walletMovies);
+        });
+    });
+    $(".no").on("click", function(){
+        var status =2;
+        $.get("/api/movies/"+status+"/1", function(data){
+            walletMovies = data;
+        });
+    });
+     $(".maybe").on("click", function(){
+        var status =3;
+        $.get("/api/movies/"+status+"/1", function(data){
+            walletMovies = data;
+        });
+    });
+</script>
 <div class="walletsbackground">
     <br><br><br>
     <div class="logo">
@@ -12,7 +34,7 @@
         <button class="no">no</button>
     </div>
 
-    <div class="yes">
+    <div class="yes" >
         <h2>Yes</h2>
         <p>Because you need to watch this at some point.</p>
     </div>
@@ -35,7 +57,7 @@
 status no 2 status maybe 3 and that is the movies being pushed here, this shows how they look res.render in the api
 routes folders --}}
 <ul class="movies">
-    {{!-- {{#each movies}}
+    {{#each walletMovies}}
     <li class="list-movie-item">
         {{#if title}}
         title: <strong>{{title}}</strong>
@@ -49,113 +71,10 @@ routes folders --}}
         <hr>
         {{/if}}
     </li>
-    {{/each}} --}}
+    {{/each}}
 
-    {{!-- if yes movies --}}
-    <ul class="yes-movies">
-        {{#if yes}}
-        <div class="yes">
-            <h2>Yes</h2>
-            <p>Because you need to watch this at some point.</p>
-        </div>
-        <hr>
-        <hr>
-        {{#each movies.1}}
-        <li class="list-movie-item">
-            {{#if title}}
-            title: <strong>{{title}}</strong>
-            {{/if}}
-            genre:{{genre}}
-            plot: {{plot}}
-            actors:{{actors}}
-            <img class="movieposter" src="{{imgURL}}" alt="{{name}}" />
-            <img src="{{img}}" alt="{{name}}" />
-            {{#if watched true}}
-            <p>watched</p>
-            <hr>
-        </li>
-        {{/each}}
-    </ul>
-
-
-    {{!-- if maybe movies --}}
-    <ul class="maybe-movies">
-        {{#if yes}}
-        <div class="maybe">
-            <h2>Maybe</h2>
-            <p>Perhaps on a rainy day...</p>
-        </div>
-        <hr>
-        <hr>
-        {{#each movies.3}}
-        <li class="list-movie-item">
-            {{#if title}}
-            title: <strong>{{title}}</strong>
-            {{/if}}
-            genre:{{genre}}
-            plot: {{plot}}
-            actors:{{actors}}
-            <img class="movieposter" src="{{imgURL}}" alt="{{name}}" />
-            <img src="{{img}}" alt="{{name}}" />
-            {{#if watched true}}
-            <p>watched</p>
-            <hr>
-        </li>
-        {{/each}}
-    </ul>
-
-    {{!-- if no movies --}}
-    <ul class="no-movies">
-        {{#if yes}}
-        <div class="no">
-            <h2>No</h2>
-            <p>Umm, Thank you, next!</p>
-        </div>
-        <hr>
-        <hr>
-        {{#each movies.2}}
-        <li class="list-movie-item">
-            {{#if title}}
-            title: <strong>{{title}}</strong>
-            {{/if}}
-            genre:{{genre}}
-            plot: {{plot}}
-            actors:{{actors}}
-            <img class="movieposter" src="{{imgURL}}" alt="{{name}}" />
-            <img src="{{img}}" alt="{{name}}" />
-            {{#if watched true}}
-            <p>watched</p>
-            <hr>
-        </li>
-        {{/each}}
-    </ul>
-
-    {{!-- if playlists --}}
-    <ul class="playlists">
-        {{#if playlists}}
-        <div class="playlists">
-            <h2>Playlists</h2>
-        </div>
-        <hr>
-        <hr>
-        {{#each playlist}}
-        <li class="list-movie-item">
-            {{#if title}}
-            title: <strong>{{title}}</strong>
-            {{/if}}
-            genre:{{genre}}
-            plot: {{plot}}
-            actors:{{actors}}
-            <img class="movieposter" src="{{imgURL}}" alt="{{name}}" />
-            <img src="{{img}}" alt="{{name}}" />
-            {{#if watched true}}
-            <p>watched</p>
-            <hr>
-        </li>
-        {{/each}}
-    </ul>
 
     {{!-- add different things if yes what yes has different like the buttons to add/create a playlist (create in
     database), and add different things for playlists like edit playlist(delete, update) --}}
 </ul>
-</div>
+</div> 

@@ -1,5 +1,4 @@
 
-
 $.get("/imdb/random", function (data) {
 
     if (data) {
