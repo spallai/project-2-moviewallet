@@ -31,16 +31,16 @@
             <p>Because you need to watch this at some point.</p>
         </div>
 
-        <div class="maybe" style="display:none">
+        <div class="maybe">
             <h2>Maybe</h2>
             <p>Saving these for a rainy day...</p>
         </div>
 
-        <div class="playlists" style="display:none">
+        <!-- <div class="playlists" style="display:none">
             <h2>Playlists</h2>
             <p>Look over and edit your playlists. Enjoy the ones you have favorited as well.</p>
-        </div>
-        <div class="no" style="display:none">
+        </div> -->
+        <div class="no">
             <h2>No</h2>
             <p>Just in case you change your mind, since they are no longer on your feed...</p>
         </div>
@@ -62,11 +62,11 @@
             loopOver(1, data);
         });
 
-        $.get("/api/movies/2/1", function (data) {
+        $.get("/api/movies/1/2", function (data) {
             loopOver(2, data);
         });
 
-        $.get("/api/movies/3/1", function (data) {
+        $.get("/api/movies/1/3", function (data) {
             loopOver(3, data);
         });
 
