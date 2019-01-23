@@ -5,7 +5,7 @@
       "database": "moviewallet_db",
       "host": "localhost",
       "dialect": "mysql",
-      "youtubeapikey": "AIzaSyBvj-rM-F-lhlYaGeXl8lZu-gNK4EdVoiQ"
+      "youtubeapikey": "AIzaSyAwOmJ5D19IFg3rbCK2qXTKgJrmHfA4i38"
     },
     "test": {
       "username": "root",

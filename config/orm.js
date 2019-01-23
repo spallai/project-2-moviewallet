@@ -39,7 +39,7 @@ var orm = {
 
     createMovie: function(title, imbdId, rating, genre, plot, actors, poster, status, user_id, cb) {
         var queryString = "INSERT INTO movies SET title = ?, imdbId = ?, rating = ?, genre = ?, plot = ?, actors = ?, poster = ?, status = ?, user_id = ?";
-        console.log("orm val - " + user_id);
+        
         connection.query(queryString, [title, imbdId, rating, genre, plot, actors, poster, status, user_id], function(err, result) {
             if (err) throw err;
             console.log("did orm");
