@@ -23,7 +23,6 @@ router.get("/api/movies/:id/:status", function(req,res){
             movies: results
         };
         res.json(hbsObject);
-        res.render("wallets", hbsObject)
     });
 });
 

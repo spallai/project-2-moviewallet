@@ -15,6 +15,6 @@ module.exports = function(app) {
         var newMovie = req.body;
         addMovie.create(newMovie.Body.Title, newMovie.Body.imdbID, newMovie.Body.Rated, newMovie.Body.Genre, newMovie.Body.Plot, newMovie.Body.Actors, newMovie.Body.Poster, newMovie.Status, 1, function(){
         });
-        res.end()
+        res.end();
     });
 }

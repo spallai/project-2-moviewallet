@@ -20,18 +20,17 @@
         <br><br>
         <div class="wallets-menu">
             <br><br>
-            <button id="yes" onclick="myFunction()">yes</button>
-            <button id="maybe" onclick="myFunction()">maybe</button>
-            <button id="playlists" onclick="myFunction()">playlists</button>
-            <button id="no" onclick="myFunction()">no</button>
+            <button class="yes">yes</button>
+            <button class="maybe">maybe</button>
+            <button class="no">no</button>
         </div>
 
-        <div class="yes">
+        <div id="yes-wallet">
             <h2>Yes</h2>
             <p>Because you need to watch this at some point.</p>
         </div>
 
-        <div class="maybe">
+        <div id="maybe-wallet" class = "hiddenThings">
             <h2>Maybe</h2>
             <p>Saving these for a rainy day...</p>
         </div>
@@ -40,7 +39,7 @@
             <h2>Playlists</h2>
             <p>Look over and edit your playlists. Enjoy the ones you have favorited as well.</p>
         </div> -->
-        <div class="no">
+        <div id="no-wallet" class = "hiddenThings">
             <h2>No</h2>
             <p>Just in case you change your mind, since they are no longer on your feed...</p>
         </div>
@@ -58,6 +57,25 @@
                 }
                 </script> -->
     <script>
+
+        $(".yes").on("click", function(){
+            $("#yes-wallet").removeClass("hiddenThings");
+            $("#no-wallet").addClass("hiddenThings");
+            $("#maybe-wallet").addClass("hiddenThings");
+        });
+
+        $(".no").on("click", function(){
+            $("#no-wallet").removeClass("hiddenThings");
+            $("#yes-wallet").addClass("hiddenThings");
+            $("#maybe-wallet").addClass("hiddenThings");
+        });
+
+        $(".maybe").on("click", function(){
+            $("#maybe-wallet").removeClass("hiddenThings");
+            $("#yes-wallet").addClass("hiddenThings");
+            $("#no-wallet").addClass("hiddenThings");
+        });
+
         $.get("/api/movies/1/1", function (data) {
             loopOver(1, data);
         });
@@ -75,6 +93,7 @@
 
             for (let i = 0; i < data.movies.length; i++) {
                 var newDiv = $("<div>");
+                newDiv.addClass("movieUnit");
                 if(status === 1)
                     newDiv.addClass("yesList");
                 else if(status === 2)
@@ -83,14 +102,21 @@
                     newDiv.addClass("maybeList");
 
                 var poster = $("<div>");
+                poster.addClass("poster");
                 var genre = $("<div>");
+                genre.addClass("genre");
                 var actors = $("<div>");
-                var year = $("<div>");
+                actors.addClass("actors");
                 var plot = $("<div>");
+                plot.addClass("plot");
                 var title = $("<div>");
+                title.addClass("title");
                 var imdbLink = $("<div>");
-
-                poster.html("<img src =" + data.movies[i].poster + ">");
+                imdbLink.addClass("imdbLink");
+                if(data.movies[i].poster !== "N/A")
+                    poster.html("<img src =" + data.movies[i].poster + ">");
+                else
+                    poster.text("Poster not available.");
                 title.text("Title: " + data.movies[i].title);
                 genre.text("Genre: " + data.movies[i].genre);
                 actors.text("Actors: " + data.movies[i].actors);
@@ -101,18 +127,17 @@
                 newDiv.append(title);
                 newDiv.append(genre);
                 newDiv.append(actors);
-                newDiv.append(year);
                 newDiv.append(plot);
                 newDiv.append(imdbLink);
 
                 moviesDiv.append(newDiv);
             }
             if (status === 1)
-                $(".yes").append(moviesDiv);
+                $("#yes-wallet").append(moviesDiv);
             else if (status === 2)
-                $(".no").append(moviesDiv);
+                $("#no-wallet").append(moviesDiv);
             else
-                $(".maybe").append(moviesDiv);
+                $("#maybe-wallet").append(moviesDiv);
         }
     </script>
 </body>

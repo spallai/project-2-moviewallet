@@ -275,6 +275,10 @@ button{
     margin-right: 10px;
 }
 
+.hiddenThings{
+    display: none;
+}
+
 #search {
   background-image: url("../images/feedicons/searchicon.png");
   background-position: 10px 12px;
