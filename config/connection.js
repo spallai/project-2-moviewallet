@@ -6,12 +6,23 @@ const config = require(__dirname + '/../config/config.json')[env];
 var connection = mysql.createConnection({
   host: config.host,
   user: config.username,
-  password: config.password, 
+  password: config.password,
   database: config.database
 });
 
+connection.on('error', function (err) {
+  console.log("database connection error - " + err.code);
+  connection.connect(function (err) {
+    if (err) {
+      console.error("error connecting: " + err.stack);
+      return;
+    }
+    console.log("connected as id " + connection.threadId);
+  });
+});
+
 // Make connection.
-connection.connect(function(err) {
+connection.connect(function (err) {
   if (err) {
     console.error("error connecting: " + err.stack);
     return;

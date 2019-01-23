@@ -45,7 +45,8 @@ app.post("/home", function(req, res, next){
                 id: result.insertId
             }
             req.session.user = newUser;
-            console.log(newUser);        
+            console.log(newUser);    
+            connection.end();    
             res.redirect("/feed.html");
         });
         
