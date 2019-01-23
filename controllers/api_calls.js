@@ -1,5 +1,7 @@
 const random = require("random-words");
 const request = require("request");
+const env = process.env.NODE_ENV || 'development';
+const config = require(__dirname + '/../config/config.json')[env];
 
 var result = {};
 
@@ -28,7 +30,7 @@ function findMovie(cb) {
 
 
 function findTrailer(title, year, movieStuff, cb) {
-    queryURLTrailer = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=" + title + "+trailer+" + year + "&type=video&key=AIzaSyBvj-rM-F-lhlYaGeXl8lZu-gNK4EdVoiQ"
+    queryURLTrailer = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=" + title + "+trailer+" + year + "&type=video&key=" + config.youtubeapikey;
     request(queryURLTrailer, { json: true }, function (err, res, body) {
         if (err) throw err;
         result = {

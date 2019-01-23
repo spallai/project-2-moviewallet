@@ -4,7 +4,8 @@
       "password": "",
       "database": "moviewallet_db",
       "host": "localhost",
-      "dialect": "mysql"
+      "dialect": "mysql",
+      "youtubeapikey": "AIzaSyAwOmJ5D19IFg3rbCK2qXTKgJrmHfA4i38"
     },
     "test": {
       "username": "root",
@@ -18,6 +19,7 @@
       "password": "2972a48f",
       "database": "heroku_86dfecb7a92b920",
       "host": "us-cdbr-iron-east-03.cleardb.net",
-      "dialect": "mysql"
+      "dialect": "mysql",
+      "youtubeapikey": "AIzaSyBvj-rM-F-lhlYaGeXl8lZu-gNK4EdVoiQ"
     }
   }
