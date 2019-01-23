@@ -28,7 +28,7 @@ function findMovie(cb) {
 
 
 function findTrailer(title, year, movieStuff, cb) {
-    queryURLTrailer = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=" + title + "+trailer+" + year + "&type=video&key=AIzaSyAwOmJ5D19IFg3rbCK2qXTKgJrmHfA4i38"
+    queryURLTrailer = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=" + title + "+trailer+" + year + "&type=video&key=AIzaSyBvj-rM-F-lhlYaGeXl8lZu-gNK4EdVoiQ"
     request(queryURLTrailer, { json: true }, function (err, res, body) {
         if (err) throw err;
         result = {
