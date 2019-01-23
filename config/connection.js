@@ -12,12 +12,11 @@ var connection = mysql.createConnection({
 
 connection.on('error', function (err) {
   console.log("database connection error - " + err.code);
-  connection.connect(function (err) {
-    if (err) {
-      console.error("error connecting: " + err.stack);
-      return;
-    }
-    console.log("connected as id " + connection.threadId);
+  connection = mysql.createConnection({
+    host: config.host,
+    user: config.username,
+    password: config.password,
+    database: config.database
   });
 });
 
