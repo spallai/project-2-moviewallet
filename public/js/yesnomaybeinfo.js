@@ -1,6 +1,6 @@
 //var data;
 
-$.get("/imdb/random", function (result) {
+$.get("/imdb/random", function (req, result) {
     if (result) {
         const smartFill = (movStat, id) => {
             var retMov = {
@@ -12,7 +12,7 @@ $.get("/imdb/random", function (result) {
                 actors: $(".trailer-box").attr("actors"),
                 poster: $(".trailer-box").attr("poster"),
                 status: movStat,
-                user_id: id
+                user_id: req.session.user.id
             };
             return retMov;
         }

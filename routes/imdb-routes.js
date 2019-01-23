@@ -13,7 +13,7 @@ module.exports = function(app) {
 
     app.post("/api/movies", function(req, res) {
         var newMovie = req.body;
-        addMovie.create(newMovie.Body.Title, newMovie.Body.imdbID, newMovie.Body.Rated, newMovie.Body.Genre, newMovie.Body.Plot, newMovie.Body.Actors, newMovie.Body.Poster, newMovie.Status, 1, function(){
+        addMovie.create(newMovie.Body.Title, newMovie.Body.imdbID, newMovie.Body.Rated, newMovie.Body.Genre, newMovie.Body.Plot, newMovie.Body.Actors, newMovie.Body.Poster, newMovie.Status, req.session.user.id, function(){
         });
         res.end();
     });
