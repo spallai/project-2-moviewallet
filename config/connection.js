@@ -1,12 +1,14 @@
 // Set up MySQL connection.
 var mysql = require("mysql");
+const env = process.env.NODE_ENV || 'development';
+const config = require(__dirname + '/../config/config.json')[env];
 
 var connection = mysql.createConnection({
-  host: "localhost",
+  host: config.host,
   port: 3306,
-  user: "root",
-  password: "",
-  database: "moviewallet_db"
+  user: config.username,
+  password: config.password, 
+  database: config.database
 });
 
 // Make connection.
