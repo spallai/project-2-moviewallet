@@ -2,6 +2,14 @@ var connection = require("../config/connection.js");
 
 var orm = {
 
+    selectByUserAndStatus: function(user,status, cb){
+        var queryString = "SELECT * FROM movies WHERE user_id = ? && status = ?";
+        connection.query(queryString, [user, status], function(err, result){
+            if(err) throw err;
+            cb(result);
+        });
+    },
+
     selectAll: function(table, cb) {
         var queryString = "SELECT * FROM ??";
 
@@ -29,21 +37,28 @@ var orm = {
         })
     },
 
-    createMovie: function(title, imbdId, rating, genre, plot, actors, status, user_id, cb) {
-        var queryString = "INSERT INTO movies SET title = ?, imdbId = ?, rating = ?, genre = ?, plot = ?, actors = ?, status = ?, user_id = ?";
+    createMovie: function(title, imbdId, rating, genre, plot, actors, poster, status, user_id, cb) {
+        var queryString = "INSERT INTO movies SET title = ?, imdbId = ?, rating = ?, genre = ?, plot = ?, actors = ?, poster = ?, status = ?, user_id = ?";
+<<<<<<< HEAD
 
-        connection.query(queryString, [title, imbdId, rating, genre, plot, actors, status, user_id], function(err, result) {
+        // console.log("INSERT INTO movies SET title = " + title + " , imdbId = "+ imbdId+ ", rating = "+rating+", genre = "+ genre +", plot = "+plot+", actors = "+actors+", status = "+status+", user_id = "+user_id);
+=======
+>>>>>>> newfrontend
+        connection.query(queryString, [title, imbdId, rating, genre, plot, actors, poster, status, 1], function(err, result) {
             if (err) throw err;
+            console.log("did orm");
+            // console.log(result);
             cb(result);
         });
     }, 
+    // add % %around title to make sure thatany word with that part of letter or word is included in the search//
 
-    createUser: function(username, password, cb) {
+    createUser: function(username, pw, callback) {
         var queryString = "INSERT INTO user SET username = ?, password = ?";
 
-        connection.query(queryString, [username, password], function(err, result) {
+        connection.query(queryString, [username, pw], function(err, result) {
             if (err) throw err;
-            cb(result);
+            callback(result);
         });
     },
 

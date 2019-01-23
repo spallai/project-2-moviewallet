@@ -1,0 +1,80 @@
+<script>
+    var walletMovies;
+    $(".yes").on("click", function(){
+        var status =1;
+        $.get("/api/movies/"+status+"/1", function(data){
+            walletMovies = data;
+            console.log(walletMovies);
+        });
+    });
+    $(".no").on("click", function(){
+        var status =2;
+        $.get("/api/movies/"+status+"/1", function(data){
+            walletMovies = data;
+        });
+    });
+     $(".maybe").on("click", function(){
+        var status =3;
+        $.get("/api/movies/"+status+"/1", function(data){
+            walletMovies = data;
+        });
+    });
+</script>
+<div class="walletsbackground">
+    <br><br><br>
+    <div class="logo">
+        <a href="feed.html"><img src="assets/images/mw-logo.png" /></a>
+    </div>
+    <br><br>
+    <div class="wallets-menu">
+        <br><br>
+        <button class="yes">yes</button>
+        <button class="maybe">maybe</button>
+        <button class="playlists">playlists</button>
+        <button class="no">no</button>
+    </div>
+
+    <div class="yes" >
+        <h2>Yes</h2>
+        <p>Because you need to watch this at some point.</p>
+    </div>
+
+    <div class="maybe" style="display:none">
+        <h2>Maybe</h2>
+        <p>Saving these for a rainy day...</p>
+    </div>
+
+    <div class="playlists" style="display:none">
+        <h2>Playlists</h2>
+        <p>Look over and edit your playlists. Enjoy the ones you have favorited as well.</p>
+    </div>
+    <div class="no" style="display:none">
+        <h2>No</h2>
+        <p>Just in case you change your mind, since they are no longer on your feed...</p>
+    </div>
+    <br><br>
+{{!-- here class button will determine in the back end the call of the movies in each wallet by status status yes 1
+status no 2 status maybe 3 and that is the movies being pushed here, this shows how they look res.render in the api
+routes folders --}}
+<ul class="movies">
+    {{#each walletMovies}}
+    <li class="list-movie-item">
+        {{#if title}}
+        title: <strong>{{title}}</strong>
+        {{/if}}
+        genre:{{genre}}
+        plot: {{plot}}
+        actors:{{actors}}
+        <img class="movieposter" src="{{imgURL}}" />
+        {{#if watched}}
+        <p>watched</p>
+        <hr>
+        {{/if}}
+    </li>
+    {{/each}}
+
+
+    {{!-- add different things if yes what yes has different like the buttons to add/create a playlist (create in
+    database), and add different things for playlists like edit playlist(delete, update) --}}
+</ul>
+</div> 

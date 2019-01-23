@@ -1,6 +1,7 @@
 var orm = require("../config/orm.js");
 
 var movie = {
+
     all: function(cb) {
         orm.selectAll("movies", function(res){
             cb(res);
@@ -19,8 +20,16 @@ var movie = {
         });
     },
 
-    create: function(title, imdbId, rating, genre, plot, actors, status, user_id, cb) {
-        orm.createMovie(title, imdbId, rating, genre, plot, actors, status, user_id, function(res){
+    viewByUserAndStatus: function(user, status, cb){
+        orm.selectByUserAndStatus(user, status, function(res){
+            cb(res);
+        });
+    },
+
+    create: function(title, imdbId, rating, genre, plot, actors, poster, status, user_id, cb) {
+        console.log("model rating: " + rating);
+        orm.createMovie(title, imdbId, rating, genre, plot, actors, poster, status, user_id, function(res){
+            console.log("did model");
             cb(res);
         })
     },

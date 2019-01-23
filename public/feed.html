@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Movie Feed</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src = "js/getinfo.js"></script>
+</head>
+<body>
+        <div class="feedbackground">
+                <br>
+            <div class="logo">
+                <a href="feed.html"><img src="assets/images/mw-logo-w.png"/></a>
+            </div>
+            <br>
+            <div class="menu">
+            <button id="wallet"><a href="../views/wallets.handlebars"><img src="./assets/images/feedicons/mywallet.png" class="responsive" /></a></button>
+            <button id="playlists"><a href="playlists.html"><img src="./assets/images/feedicons/playlists.png" class="responsive" /> </a></button>
+</div>
+        <div class="trailer-box">
+                <iframe id="trailer-box" width="420" height="600"></iframe>
+                <br><br> <br><br><br><br> <br> <br> <br> <br> <br> <br> 
+        </div>
+        <div>
+            <span id="infoSpan">
+                <div id = "poster"></div>
+                <div id = "plot"></div>
+                <div id = "actors"></div>
+                <div id = "year"></div>
+                <div id = "imdbLink"></div>
+                <div id = "plot"></div>
+            </span>
+
+        </div>
+        <div class="menu-box">
+                <button id="yes-i" class="responsive"><i class="fas fa-check"></i></button>
+                <button id="no-i" class="responsive"><i class="fas fa-times"></i></button>
+                <button id="maybe-i" class="responsive"><i class="fas fa-ellipsis-h"></i></button>
+                <button id="info-i" class="responsive"><i class="fas fa-info"></i></button>
+        </div>  
+        
+        <!-- <div class="menu-box">
+                        <button id="yes" class="responsive"><img src="./assets/images/feedicons/yes.png" class="responsive"></button>
+                        <button id="no"><img src="./assets/images/feedicons/no.png" class="responsive"></button>
+                        <button id="maybe"><img src="./assets/images/feedicons/maybe.png" class="responsive"></button>
+                        <button id="info"><img src="./assets/images/feedicons/info.png" class="responsive"></button>
+                </div>  -->
+</body>
+</html>
