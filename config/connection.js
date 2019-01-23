@@ -5,7 +5,6 @@ const config = require(__dirname + '/../config/config.json')[env];
 
 var connection = mysql.createConnection({
   host: config.host,
-  port: 3306,
   user: config.username,
   password: config.password, 
   database: config.database
