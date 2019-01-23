@@ -21,7 +21,7 @@ function findMovie(cb) {
             return (result);
         } else {
             console.log("Bad movie");
-            //findMovie(cb);
+            findMovie(cb);
         }
     })
 }
