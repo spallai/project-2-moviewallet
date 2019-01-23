@@ -75,6 +75,12 @@
 
             for (let i = 0; i < data.movies.length; i++) {
                 var newDiv = $("<div>");
+                if(status === 1)
+                    newDiv.addClass("yesList");
+                else if(status === 2)
+                    newDiv.addClass("noList");
+                else
+                    newDiv.addClass("maybeList");
 
                 var poster = $("<div>");
                 var genre = $("<div>");
