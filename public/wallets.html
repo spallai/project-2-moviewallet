@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Movie Wallets</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
 </head>
@@ -15,11 +16,10 @@
     <div class="walletsbackground">
         <br><br><br>
         <div class="logo">
-            <a href="feed.html"><img src="assets/images/mw-logo.png" /></a>
+            <a href="feed.html"><img src="assets/images/mw-logo-w.png" /></a>
         </div>
         <br><br>
         <div class="wallets-menu">
-            <br><br>
             <button class="yes">yes</button>
             <button class="maybe">maybe</button>
             <button class="no">no</button>
@@ -27,12 +27,12 @@
 
         <div id="yes-wallet">
             <h2>Yes</h2>
-            <p>Because you need to watch this at some point.</p>
+            <h3>Because you need to watch these at some point</h3>
         </div>
 
         <div id="maybe-wallet" class = "hiddenThings">
             <h2>Maybe</h2>
-            <p>Saving these for a rainy day...</p>
+            <h3>Saving these for a rainy day...</h3>
         </div>
 
         <!-- <div class="playlists" style="display:none">
@@ -41,9 +41,9 @@
         </div> -->
         <div id="no-wallet" class = "hiddenThings">
             <h2>No</h2>
-            <p>Just in case you change your mind, since they are no longer on your feed...</p>
+            <h3>Just in case you change your mind, since they are no longer on your feed</h3>
         </div>
-        <br><br>
+        <br>
     </div>
 
     <!-- <script>**WORKING ON THIS
@@ -114,14 +114,14 @@
                 var imdbLink = $("<div>");
                 imdbLink.addClass("imdbLink");
                 if(data.movies[i].poster !== "N/A")
-                    poster.html("<img src =" + data.movies[i].poster + ">");
+                    poster.html("<img src =" + data.movies[i].poster + " class='posterborder'>");
                 else
                     poster.text("Poster not available.");
-                title.text("Title: " + data.movies[i].title);
-                genre.text("Genre: " + data.movies[i].genre);
-                actors.text("Actors: " + data.movies[i].actors);
-                plot.text("Plot: " + data.movies[i].plot);
-                imdbLink.html("<p>Imdb Link: <a href = 'https://www.imdb.com/title/" + data.movies[i].imdbId + "/'>https://www.imdb.com/title/" + data.movies[i].imdbId + "/</a></p>");
+                title.html(data.movies[i].title);
+                genre.html("<p class='hello-genre'> Genre </p>" + data.movies[i].genre);
+                actors.html("<p class='hello-actors'> Actors </p>" + data.movies[i].actors);
+                plot.html("<p class='hello-plot'> Plot </p>" + data.movies[i].plot);
+                imdbLink.html("<p class='hello'>Imdb Link: <a href = 'https://www.imdb.com/title/" + data.movies[i].imdbId + "/'>https://www.imdb.com/title/" + data.movies[i].imdbId + "/</a></p>");
 
                 newDiv.append(poster);
                 newDiv.append(title);
