@@ -32,11 +32,11 @@ $.get("/imdb/random", function (data) {
         });
         $("#info-i").on("click", function (event) {
             $("#poster").html("<img src = " + data.Body.Poster + ">");
-            $("#title").text("Title: " + data.Body.Title);
-            $("#genre").text("Genre: " + data.Body.Genre);
-            $("#actors").text("Actors: " + data.Body.Actors);
-            $("#year").text("Year: " + data.Body.Year);
-            $("#plot").text("Plot: " + data.Body.Plot);
+            $("#title").html("<p>Title: </p>" + data.Body.Title);
+            $("#genre").html("<p>Genre: </p>" + data.Body.Genre);
+            $("#actors").html("<p>Actors: </p>" + data.Body.Actors);
+            $("#year").html("<p>Year: </p>" + data.Body.Year);
+            $("#plot").html("<p>Plot: </p>" + data.Body.Plot);
             $("#imdbLink").html("<p>Imdb Link: <a href = 'https://www.imdb.com/title/" + data.Body.imdbID + "/'>https://www.imdb.com/title/" + data.Body.imdbID + "/</a></p>");
             if($("#infoSpan").is(":hidden"))
                 $("#infoSpan").show();

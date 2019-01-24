@@ -8,12 +8,17 @@
             margin: 8px 0; 
             display: inline-block; 
             border: 1px solid #ccc; 
+            border-radius: 10px;
             box-sizing: border-box; 
+            color:#110c2e;
+            font-family: Arial, Helvetica, sans-serif;
         } 
           
           
         .signupbtn { 
-            background-color: #4CAF50; 
+            background-color: #4427ef; 
+            font-size: 20px;
+            border-radius: 10px;
             color: white; 
             padding: 16px 20px; 
             margin: 4px 0; 
@@ -21,14 +26,19 @@
             cursor: pointer; 
             width: 100%; 
             float: left;
+            font-family: Arial, Helvetica, sans-serif;
         } 
           
           
         .cancelbtn { 
             padding: 16px 20px; 
-            background-color: #f44336; 
+            border-radius: 10px;
+            font-size: 20px;
+            background-color: #366cf4; 
             float: left;
             width: 100%; 
+            color:white;
+            font-family: Arial, Helvetica, sans-serif;
         } 
           
           
@@ -37,6 +47,7 @@
           
         .container { 
             padding: 16px; 
+            font-family: Arial, Helvetica, sans-serif;
         } 
           
           
@@ -69,14 +80,14 @@
             position: absolute; 
             right: 35px; 
             top: 15px; 
-            color: #000; 
+            color: rgb(35, 17, 233); 
             font-size: 40px; 
             font-weight: bold; 
         } 
           
         .close:hover, 
         .close:focus { 
-            color: red; 
+            color: #160c55; 
             cursor: pointer; 
         } 
           
@@ -114,7 +125,7 @@
             <div class="logo">
                 <a href="home.html"><img src="assets/images/mw-logo.png" /></a>
             </div>
-            <br><br> <br><br>
+            <br><br>
             <div class="userinfo">
                 <!-- add the form for signing in here -->
                 <div class="logins">
@@ -141,7 +152,7 @@
                     </div>
                 </div>
 
-                <button class="signup" onclick="document.getElementById('signup').style.display='block'" style="width:auto;">Sign up</button>
+                <button class="signup" onclick="document.getElementById('signup').style.display='block'" style="width:auto;">sign up</button>
                 <div id="signup" class="modal">
                     <span onclick="document.getElementById('signup').style.display='none'" class="close" title="Close Modal" class="close" title="Close Modal">×</span>
 
@@ -170,12 +181,12 @@
 
 
                 <br>
-                <button class="browseplaylists" onclick="myFunction()"><img src="./assets/images/landingpage/browseplaylists.png"
-                        class="responsive"></button>
+                <!-- tbc -->
+                <!-- <button class="browseplaylists" onclick="myFunction()"><img src="./assets/images/landingpage/browseplaylists.png"
+                        class="responsive"></button> -->
             </div>
         </div>
         <br><br> <br><br> <br><br> <br><br>
-
 
     </div>
 
